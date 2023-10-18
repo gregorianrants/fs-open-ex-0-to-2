@@ -1,23 +1,25 @@
 import axios from 'axios';
 
-const URL = 'http://localhost:3001/persons'
+const URL = '/api/persons'
 
-let get = () =>
-    axios.get(URL)
+let get = () => {
+
+    return axios.get(URL)
         .then(res => res.data)
+}
+
 
 function create(data) {
-
     return (
         axios.post(URL, data)
-            .then(res => res.data)
+            .then(res => res.data.data)
     )
 }
 
 function remove(id) {
     return (
         axios.delete(`${URL}/${id}`)
-            .then(res => res.data)
+            .then(res => { })
     )
 }
 

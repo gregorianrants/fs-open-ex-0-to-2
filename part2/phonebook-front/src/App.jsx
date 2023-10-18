@@ -118,7 +118,8 @@ const App = () => {
                     setNewNumber('')
                 })
                 .catch(err => {
-                    setWarningMessage(`Information of ${existingPerson.name} has been removed from the phone book`)
+                    console.log(err)
+                    setWarningMessage(`Information of ${existingPerson.name} has previously been removed from phone book, this will now be removed from the screen`)
                     let newPersons = persons.filter(person => person.id != existingPerson.id)
                     setPersons(newPersons)
                 })
